@@ -15,7 +15,8 @@ namespace UnitTestProject
             HerniPostava postava = new HerniPostava("dezo");
             Assert.AreEqual(postava.PoziceX, 0);
             Assert.AreEqual(postava.PoziceY, 0);
-
+            Assert.AreNotEqual(postava.PoziceX, 1);
+            Assert.AreNotEqual(postava.PoziceY, 1);
         }
 
         [TestMethod]
@@ -23,6 +24,7 @@ namespace UnitTestProject
         {
             HerniPostava postava = new HerniPostava("dezo");
             Assert.AreEqual(postava.Level, 1);
+            Assert.AreNotEqual(postava.Level, 0);
         }
 
         [TestMethod]
@@ -32,6 +34,8 @@ namespace UnitTestProject
             postava.ZmenaPozice(1, 1);
             Assert.AreEqual(postava.PoziceX, 1);
             Assert.AreEqual(postava.PoziceY, 1);
+            Assert.AreNotEqual(postava.PoziceY, 0);
+            Assert.AreNotEqual(postava.PoziceY, 0);
         }
     }
 }
