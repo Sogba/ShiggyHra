@@ -22,5 +22,10 @@ namespace ShiggyHra
         {
             return $"Jmeno: {Jmeno}, Level: {Level}, Pozice: [{PoziceX}, {PoziceY}]";
         }
+
+        public void ZmenaPozice()
+        {
+            
+        }
     }
 }
