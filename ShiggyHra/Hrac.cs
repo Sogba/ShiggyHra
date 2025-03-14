@@ -15,7 +15,7 @@ namespace ShiggyHra
         public int XP { get; set; } = 0;
 
 
-        public Hrac(string jmeno) : base(jmeno)
+        public Hrac(string jmeno, string specializace, TypObliceje typ, TypVlasu typVlasu, BarvaVlasu barva) : base(jmeno)
         {
         }
 
