@@ -39,5 +39,10 @@ namespace ShiggyHra
             Blond,
             Cervena
         }
+
+        public void AddXP(int xp)
+        {
+
+        }
     }
 }
