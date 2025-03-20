@@ -9,7 +9,7 @@ namespace ShiggyHra
     public class Hrac : HerniPostava
     {
         public string Specializace { get; set; }
-        private TypObliceje Oblicej { get; set; }
+        public TypObliceje Oblicej { get; set; }
         public TypVlasu Vlasy { get; set; }
         public BarvaVlasu Barva { get; set; }
         public int XP { get; set; } = 0;

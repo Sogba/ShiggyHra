@@ -63,5 +63,15 @@ namespace UnitTestProject
             Assert.AreEqual(0, postava.AktualniHP);
         }
 
+        [TestMethod]
+        public void ToStringTest()
+        {
+            HerniPostava postava = new HerniPostava("Dezo");
+            postava.ZmenaPozice(200, 520);
+            postava.Level = 55;
+            string expectedString = "Jmeno: Dezo, Level: 55, Pozice X: 200, Pozice Y: 520";
+            Assert.AreEqual(expectedString, postava.ToString());
+        }
+
     }
 }
