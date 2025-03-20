@@ -28,14 +28,43 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void CanChangeXP()
+        public void CanGainXP()
+        {
+            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
+            hrac.AddXP(150);
+            Assert.AreEqual(150, hrac.XP);
+        }
+
+        [TestMethod]
+        public void LevelUpAfterEnoughXP()
         {
             Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
             hrac.AddXP(100);
-            Assert.AreEqual(hrac.XP, 100);
-            Assert.AreNotEqual(hrac.XP, 99);
-            Assert.AreNotEqual(hrac.Level, 0);
-            Assert.AreEqual(hrac.Level, 2);
+            Assert.AreEqual(2, hrac.Level);
+        }
+
+        [TestMethod]
+        public void CanPickUpItems()
+        {
+            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
+            hrac.GrabLoot("Meč");
+            Assert.IsTrue(hrac.Inventar.Contains("Meč"));
+        }
+
+        [TestMethod]
+        public void CanChooseWeapon()
+        {
+            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
+            hrac.UseWeapon("Luk");
+            Assert.AreEqual("Luk", hrac.AktivniZbran);
+        }
+
+        [TestMethod]
+        public void CanUseStamina()
+        {
+            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
+            hrac.UseStamina(20);
+            Assert.AreEqual(80, hrac.AktualniStamina);
         }
 
     }

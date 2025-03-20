@@ -45,5 +45,23 @@ namespace UnitTestProject
             Assert.AreEqual(postava.Jmeno, "dezo123456789");
             Assert.AreNotEqual(postava.Jmeno, "dezo");
         }
+
+        [TestMethod]
+        public void TakesDamage()
+        {
+            HerniPostava postava = new HerniPostava("Dezo");
+            postava.UtrziZraneni(30);
+            Assert.AreEqual(70, postava.AktualniHP);
+            Assert.AreNotEqual(100, postava.AktualniHP);
+        }
+
+        [TestMethod]
+        public void CantHaveNegativeHP()
+        {
+            HerniPostava postava = new HerniPostava("Dezo");
+            postava.UtrziZraneni(150);
+            Assert.AreEqual(0, postava.AktualniHP);
+        }
+
     }
 }

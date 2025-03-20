@@ -13,6 +13,10 @@ namespace ShiggyHra
         public TypVlasu Vlasy { get; set; }
         public BarvaVlasu Barva { get; set; }
         public int XP { get; set; } = 0;
+        public int MaxStamina { get; set; } = 100;
+        public int AktualniStamina { get; set; } = 100;
+        public List<string> Inventar { get; set; } = new List<string>();
+        public string AktivniZbran { get; set; }
 
 
         public Hrac(string jmeno, string specializace, TypObliceje typ, TypVlasu typVlasu, BarvaVlasu barva) : base(jmeno)
@@ -42,7 +46,27 @@ namespace ShiggyHra
 
         public void AddXP(int xp)
         {
+        }
 
+        public void Attack(NPC cil, int damage)
+        {
+        }
+
+        public void UseStamina(int mnozstvi)
+        {
+        }
+
+        public void GrabLoot(string predmet)
+        {
+        }
+
+        public void UseWeapon(string nazev)
+        {
+        }
+
+        public override string ToString()
+        {
+            return "";
         }
     }
 }

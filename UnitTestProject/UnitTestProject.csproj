@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HerniPostavaTest.cs" />
+    <Compile Include="NpcTest.cs" />
     <Compile Include="HracTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

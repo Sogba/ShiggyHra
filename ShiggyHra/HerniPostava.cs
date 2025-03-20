@@ -10,22 +10,28 @@ namespace ShiggyHra
     {
         public string Jmeno { get; set; }
         public int Level { get; set; } = 1;
-        public int PoziceX { get; set; } = 0;
-        public int PoziceY { get; set; } = 0;
+        public int PoziceX { get; private set; }
+        public int PoziceY { get; private set; }
+        public int MaxHP { get; set; }
+        public int AktualniHP { get; set; }
+        public int Armor { get; set; }
 
         public HerniPostava(string jmeno)
         {
-            Jmeno = jmeno;
-        }
 
-        public override string ToString()
-        {
-            return $"Jmeno: {Jmeno}, Level: {Level}, Pozice: [{PoziceX}, {PoziceY}]";
         }
 
         public void ZmenaPozice(int x, int y)
         {
-            
+        }
+
+        public void UtrziZraneni(int damage)
+        {
+        }
+
+        public override string ToString()
+        {
+            return "";
         }
     }
 }
