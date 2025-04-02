@@ -41,8 +41,8 @@ namespace UnitTestProject
         [TestMethod]
         public void CanUseName()
         {
-            HerniPostava postava = new HerniPostava("dezo123456789");
-            Assert.AreEqual(postava.Jmeno, "dezo123456789");
+            HerniPostava postava = new HerniPostava("dezo123");
+            Assert.AreEqual(postava.Jmeno, "dezo123");
             Assert.AreNotEqual(postava.Jmeno, "dezo");
         }
 

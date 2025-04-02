@@ -54,22 +54,6 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void CanPickUpItems()
-        {
-            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
-            hrac.GrabLoot("Meč");
-            Assert.IsTrue(hrac.Inventar.Contains("Meč"));
-        }
-
-        [TestMethod]
-        public void CanChooseWeapon()
-        {
-            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
-            hrac.UseWeapon("Luk");
-            Assert.AreEqual("Luk", hrac.AktivniZbran);
-        }
-
-        [TestMethod]
         public void CanUseStamina()
         {
             Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);

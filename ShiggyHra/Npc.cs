@@ -24,17 +24,13 @@ namespace ShiggyHra
 
         }
 
-        public void ChangePosition(int x, int y)
-        {
-        }
-
         public void Attack(Hrac cil, int damage)
         {
         }
 
         public override string ToString()
         {
-            return "";
+            return $"Jmeno: {Jmeno}, Boss: {(JeBoss ? "Ano" : "Ne")}, Síla: {Strength}, Prace: {Role}";
         }
     }
 }

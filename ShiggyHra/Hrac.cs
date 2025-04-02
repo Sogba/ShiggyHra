@@ -13,14 +13,17 @@ namespace ShiggyHra
         public TypVlasu Vlasy { get; set; }
         public BarvaVlasu Barva { get; set; }
         public int XP { get; set; } = 0;
-        public int MaxStamina { get; set; } = 100;
         public int AktualniStamina { get; set; } = 100;
         public List<string> Inventar { get; set; } = new List<string>();
-        public string AktivniZbran { get; set; }
 
 
         public Hrac(string jmeno, string specializace, TypObliceje typ, TypVlasu typVlasu, BarvaVlasu barva) : base(jmeno)
         {
+            Jmeno = jmeno;
+            Specializace = specializace;
+            Oblicej = typ;
+            Vlasy = typVlasu;
+            Barva = barva;
         }
 
         public enum TypObliceje
@@ -46,10 +49,14 @@ namespace ShiggyHra
 
         public void AddXP(int xp)
         {
+            XP += xp;
+            if (XP / (Level * 100) >= 1)
+                Level++;
         }
 
         public void Attack(NPC cil, int damage)
         {
+
         }
 
         public void UseStamina(int mnozstvi)
