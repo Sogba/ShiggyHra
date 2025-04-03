@@ -8,72 +8,51 @@ namespace ShiggyHra
 {
     public class Hrac : HerniPostava
     {
-        public string Specializace { get; set; }
-        public TypObliceje Oblicej { get; set; }
-        public TypVlasu Vlasy { get; set; }
-        public BarvaVlasu Barva { get; set; }
-        public int XP { get; set; } = 0;
-        public int AktualniStamina { get; set; } = 100;
-        public List<string> Inventar { get; set; } = new List<string>();
+        private TypObliceje oblicej = TypObliceje.VelkyNos;
+        private TypVlasu vlasy = TypVlasu.Drdol;
+        private BarvaVlasu barva = BarvaVlasu.Kastanova;
+        public int XP { get; private set; } = 0;
 
-
-        public Hrac(string jmeno, string specializace, TypObliceje typ, TypVlasu typVlasu, BarvaVlasu barva) : base(jmeno)
+        private string specializace;
+        public string Specializace
         {
-            Jmeno = jmeno;
+            get => specializace;
+            set
+            {
+                List<string> povoleneSpecializace = new() { "Kouzelník", "Berserker", "Inženýr", "Cizák" };
+                if (povoleneSpecializace.Contains(value))
+                    specializace = value;
+                else
+                    throw new ArgumentException("Neplatná specializace!");
+            }
+        }
+
+        public Hrac(string jmeno, string specializace, TypObliceje oblicej, TypVlasu vlasy, BarvaVlasu barva)
+            : base(jmeno)
+        {
             Specializace = specializace;
-            Oblicej = typ;
-            Vlasy = typVlasu;
-            Barva = barva;
+            this.oblicej = oblicej;
+            this.vlasy = vlasy;
+            this.barva = barva;
         }
 
-        public enum TypObliceje
-        {
-            VelkyNos,
-            Usoplesk,
-            MakeUp
-        }
-
-        public enum TypVlasu
-        {
-            Drdol,
-            Culik,
-            Pleska
-        }
-
-        public enum BarvaVlasu
-        {
-            Kastanova,
-            Blond,
-            Cervena
-        }
+        public enum TypObliceje { VelkyNos, Usoplesk, MakeUp }
+        public enum TypVlasu { Drdol, Culik, Pleska }
+        public enum BarvaVlasu { Kastanova, Blond, Cervena }
 
         public void AddXP(int xp)
         {
             XP += xp;
-            if (XP / (Level * 100) >= 1)
+            while (XP >= Level * 100)
+            {
+                XP -= Level * 100;
                 Level++;
-        }
-
-        public void Attack(NPC cil, int damage)
-        {
-
-        }
-
-        public void UseStamina(int mnozstvi)
-        {
-        }
-
-        public void GrabLoot(string predmet)
-        {
-        }
-
-        public void UseWeapon(string nazev)
-        {
+            }
         }
 
         public override string ToString()
         {
-            return "";
+            return $"Jméno: {Jmeno}, Specializace: {Specializace}, Obličej: {oblicej}, Vlasy: {vlasy}, Barva vlasů: {barva}, XP: {XP}, Level: {Level}";
         }
     }
 }
