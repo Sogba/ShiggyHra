@@ -39,7 +39,7 @@ namespace ShiggyHra
             AktualniHP = 100;
         }
 
-        public void ZmenaPozice(int x, int y)
+        public virtual void ZmenaPozice(int x, int y)
         {
             PoziceX = x;
             PoziceY = y;

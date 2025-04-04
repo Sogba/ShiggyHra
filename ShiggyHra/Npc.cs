@@ -33,8 +33,8 @@ namespace ShiggyHra
             cil.UtrziZraneni(damage);
         }
 
-        public override string ToString()
-        {
+        public override string ToString() 
+        { 
             return $"Jméno: {Jmeno}, Boss: {(JeBoss ? "Ano" : "Ne")}, Síla: {Strength}, Práce: {Role}";
         }
     }

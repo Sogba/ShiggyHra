@@ -19,7 +19,7 @@ namespace ShiggyHra
             get => specializace;
             set
             {
-                List<string> povoleneSpecializace = new() { "Kouzelník", "Berserker", "Inženýr", "Cizák" };
+                List<string> povoleneSpecializace = new List<string> { "Kouzelník", "Berserker", "Inženýr", "Cizák" };
                 if (povoleneSpecializace.Contains(value))
                     specializace = value;
                 else
@@ -27,8 +27,7 @@ namespace ShiggyHra
             }
         }
 
-        public Hrac(string jmeno, string specializace, TypObliceje oblicej, TypVlasu vlasy, BarvaVlasu barva)
-            : base(jmeno)
+        public Hrac(string jmeno, string specializace, TypObliceje oblicej, TypVlasu vlasy, BarvaVlasu barva): base(jmeno)
         {
             Specializace = specializace;
             this.oblicej = oblicej;
@@ -40,14 +39,16 @@ namespace ShiggyHra
         public enum TypVlasu { Drdol, Culik, Pleska }
         public enum BarvaVlasu { Kastanova, Blond, Cervena }
 
+        public BarvaVlasu Barva { get => barva; }
+        public TypVlasu Vlasy { get => vlasy; }
+        public TypObliceje Oblicej { get => oblicej; }
+
+
         public void AddXP(int xp)
         {
             XP += xp;
             while (XP >= Level * 100)
-            {
-                XP -= Level * 100;
                 Level++;
-            }
         }
 
         public override string ToString()

@@ -13,7 +13,7 @@ namespace UnitTestProject
         [TestMethod]
         public void CanAttackPlayer()
         {
-            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
+            Hrac hrac = new Hrac("dezo", "Kouzelník", 0, 0, 0);
             NPC goblin = new NPC("Goblin", Prace.Nepritel, true, 5);
             goblin.Attack(hrac, 20);
             Assert.AreEqual(80, hrac.AktualniHP);
@@ -29,7 +29,7 @@ namespace UnitTestProject
         [TestMethod]
         public void IsBoss()
         {
-            NPC boss = new NPC("Mega Goblin", Prace.Nepritel, true, 4);
+            NPC boss = new NPC("Mega", Prace.Nepritel, true, 4);
             Assert.IsTrue(boss.JeBoss);
         }
 
@@ -61,7 +61,7 @@ namespace UnitTestProject
         public void ToStringTest()
         {
             NPC npc = new NPC("Pepa", Prace.Obchodnik, false, 1);
-            string expectedString = "Jmeno: Pepa, Boss: Ne, Síla: 1, Prace: Obchodník";
+            string expectedString = "Jméno: Pepa, Boss: Ne, Síla: 1, Práce: Obchodnik";
             Assert.AreEqual(expectedString, npc.ToString());
         }
 
