@@ -29,7 +29,7 @@ namespace UnitTestProject
         [TestMethod]
         public void IsBoss()
         {
-            NPC boss = new NPC("Mega Goblin", Prace.Nepritel, true, 4);
+            NPC boss = new NPC("Mega", Prace.Nepritel, true, 4);
             Assert.IsTrue(boss.JeBoss);
         }
 
