@@ -1,4 +1,4 @@
 # ShiggyHra
 
-- Jakub Málek
-- Jan Prokůpek
+- Pražák Lukáš
+- Přemek Palát
