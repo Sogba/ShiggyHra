@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShiggyHra
 {
-    public enum Prace { Obchodnik, Nepritel, Obyvatel }
+   public enum Prace { Obchodnik, Nepritel, Obyvatel }
 
     public class NPC : HerniPostava
     {
@@ -25,17 +25,12 @@ namespace ShiggyHra
         {
             Role = role;
             JeBoss = false;
-            Strength = 0;  // Implicitní hodnota, pokud není síla zadána
+            Strength = 0;  
         }
 
         public void Attack(Hrac cil, int damage)
         {
-            // Implementace útoku
-        }
-
-        public sealed override void ZmenaPozice()
-        {
-            Console.WriteLine("NPC má statickou pozici a nemůže být změněno.");
+            cil.UtrziZraneni(damage);
         }
 
         public override string ToString()
