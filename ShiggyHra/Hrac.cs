@@ -19,7 +19,7 @@ namespace ShiggyHra
             get => specializace;
             set
             {
-                List<string> povoleneSpecializace = new() { "Kouzelník", "Berserker", "Inženýr", "Cizák" };
+                List<string> povoleneSpecializace = new List<string> { "Kouzelník", "Berserker", "Inženýr", "Cizák" };
                 if (povoleneSpecializace.Contains(value))
                     specializace = value;
                 else
@@ -39,6 +39,11 @@ namespace ShiggyHra
         public enum TypObliceje { VelkyNos, Usoplesk, MakeUp }
         public enum TypVlasu { Drdol, Culik, Pleska }
         public enum BarvaVlasu { Kastanova, Blond, Cervena }
+
+        public BarvaVlasu Barva { get; set; }
+        public TypVlasu Vlasy { get; set; }
+        public TypObliceje Oblicej { get; set; }
+
 
         public void AddXP(int xp)
         {

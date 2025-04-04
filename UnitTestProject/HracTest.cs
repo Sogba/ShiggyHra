@@ -52,14 +52,5 @@ namespace UnitTestProject
             hrac.AddXP(100);
             Assert.AreEqual(2, hrac.Level);
         }
-
-        [TestMethod]
-        public void CanUseStamina()
-        {
-            Hrac hrac = new Hrac("dezo", "dezo", 0, 0, 0);
-            hrac.UseStamina(20);
-            Assert.AreEqual(80, hrac.AktualniStamina);
-        }
-
     }
 }

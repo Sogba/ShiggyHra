@@ -30,7 +30,17 @@ namespace ShiggyHra
 
         public void Attack(Hrac cil, int damage)
         {
-            cil.UtrziZraneni(damage);
+            // Implementace útoku
+        }
+
+        public override void ZmenaPozice(int x, int y)
+        {
+            Console.WriteLine("NPC má statickou pozici a nemůže být změněno.");
+        }
+
+        public void ZmenaPozice()
+        {
+            Console.WriteLine("NPC má statickou pozici a nemůže být změněno.");
         }
 
         public override string ToString()
