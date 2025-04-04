@@ -2,8 +2,8 @@
 
 ## Originál
 
--Jakub Málek
--Jan Prokůpek
+- Jakub Málek
+- Jan Prokůpek
 
 ## Testy
 
