@@ -1,11 +1,11 @@
 # ShiggyHra
 
-##Originál
+## Originál
 
 -Jakub Málek
 -Jan Prokůpek
 
-##Testy
+## Testy
 
 - Pražák Lukáš
 - Přemek Palát
